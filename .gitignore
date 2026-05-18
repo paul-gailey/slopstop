@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+extension/dist/
+extension/*.zip
+
+# Modal local cache
+.modal/
+hf_cache/
+.cache/
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local-only secrets / drafts
+.env
+.env.*
+!.env.example
+
+# Claude Code local state
+.claude/

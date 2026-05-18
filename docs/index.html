@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>slopstop — see what's AI on LinkedIn &amp; Substack</title>
+  <meta name="description" content="A Chrome extension that scores LinkedIn and Substack posts for AI-generated content, in real time as you scroll.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <svg class="brand-mark" width="36" height="36" viewBox="0 0 32 32">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0ea5e9"/>
+            <stop offset="100%" stop-color="#6366f1"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#g)"/>
+        <text x="16" y="21" text-anchor="middle" fill="white" font-size="12" font-weight="800" font-family="-apple-system, system-ui, sans-serif">AI</text>
+      </svg>
+      <span class="brand-name">slopstop</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#install" class="nav-cta">Install</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>See which posts are <span class="grad">AI-generated</span><br>before you read them.</h1>
+      <p class="lede">A Chrome extension that scores every LinkedIn and Substack post and comment for AI tells, live as you scroll. Free.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#install">Install on Chrome — free</a>
+        <a class="btn btn-secondary" href="#features">See how it works</a>
+      </div>
+      <div class="hero-meta">No account required · Runs on-device · Works on LinkedIn and Substack</div>
+    </div>
+  </section>
+
+  <section class="section-block" id="features">
+    <div class="container">
+      <h2>What it does</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon" style="background: #16a34a"></div>
+          <h3>Real-time scoring</h3>
+          <p>Each post and comment gets a colored badge showing how likely it is to be AI-generated, on a 0–100 scale.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon" style="background: #ca8a04"></div>
+          <h3>Reasoning, not just verdicts</h3>
+          <p>Hover any badge to see exactly which patterns triggered the score: stock phrases, em-dashes, emoji-bullet structure.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon" style="background: #dc2626"></div>
+          <h3>Privacy by default</h3>
+          <p>Heuristics run entirely in your browser. No post text leaves your machine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block alt" id="how">
+    <div class="container">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><span class="step-num">1</span><div><strong>Install</strong> the extension and open LinkedIn or Substack.</div></li>
+        <li><span class="step-num">2</span><div><strong>Scroll your feed.</strong> Every post and comment gets a small score badge in the corner.</div></li>
+        <li><span class="step-num">3</span><div><strong>Hover</strong> any badge to see why it scored that way — em-dash density, stock phrases, structural tells.</div></li>
+        <li><span class="step-num">4</span><div><strong>Treat it as a hint.</strong> Heuristics aren't proof. Polished writers will trip false positives.</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section-block" id="install">
+    <div class="container narrow">
+      <h2>Install</h2>
+      <p>The extension is currently in development and available for sideloading via "Load unpacked" in Chrome.</p>
+      <p>A Chrome Web Store listing is coming soon. Sign up in the extension popup to be notified when Pro features launch.</p>
+      <p style="margin-top: 24px; font-size: 14px; color: var(--text-muted);">
+        Want to self-host with your own AI-detector model? slopstop is open source —
+        <a href="https://github.com/paulgailey/slopstop">view the repo on GitHub</a>.
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <a class="brand small" href="index.html">
+          <svg width="22" height="22" viewBox="0 0 32 32"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#6366f1"/></linearGradient></defs><rect x="2" y="2" width="28" height="28" rx="8" fill="url(#g2)"/><text x="16" y="21" text-anchor="middle" fill="white" font-size="12" font-weight="800" font-family="-apple-system, system-ui, sans-serif">AI</text></svg>
+          <span class="brand-name">slopstop</span>
+        </a>
+        <nav class="footer-nav">
+          <a href="https://github.com/paulgailey/slopstop">GitHub</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

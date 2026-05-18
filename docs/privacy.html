@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — slopstop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <svg class="brand-mark" width="36" height="36" viewBox="0 0 32 32">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#6366f1"/></linearGradient></defs>
+        <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#g)"/>
+        <text x="16" y="21" text-anchor="middle" fill="white" font-size="12" font-weight="800" font-family="-apple-system, system-ui, sans-serif">AI</text>
+      </svg>
+      <span class="brand-name">slopstop</span>
+    </a>
+  </header>
+
+  <main class="container narrow" style="padding: 60px 24px;">
+    <h1 style="font-size: 36px; text-align: left;">Privacy Policy</h1>
+    <p><em>Last updated: May 18, 2026</em></p>
+
+    <p>This policy covers slopstop, the Chrome extension. It describes what data the extension processes, what is sent to our servers, and what is held by the third parties we rely on.</p>
+
+    <h2>Heuristic scoring runs in your browser</h2>
+    <p>The colored badge that appears next to each post is produced by pattern matching that runs entirely on your device — em-dash density, stock phrases, emoji-bulleted structure, and similar tells. <strong>No post text leaves your browser for this step.</strong> It happens on every post you see while the extension is enabled.</p>
+
+    <h2>The "Run AI detector" button sends post text to our server</h2>
+    <p>When you click <strong>Run AI detector</strong> in a post's tooltip, the extension sends that post's text to our inference backend hosted on Modal. The text is scored by an open-source detector model and the score is returned to your browser.</p>
+    <p>On the <strong>Pro</strong> tier, this happens automatically for every post the extension detects, without an explicit click.</p>
+    <p>We do not log or persist post text after the request completes. We do keep anonymised counters of how many requests have been made per identity per day, used to enforce daily quotas.</p>
+
+    <h2>Accounts and billing involve third parties</h2>
+    <p>If you sign in, <strong>Clerk</strong> (clerk.com) handles authentication. Clerk stores your email address and session tokens; our server receives only a signed user ID, which we use to look up your subscription tier and quota. See Clerk's privacy policy for what they collect.</p>
+    <p>If you subscribe to Basic, Plus, or Pro, <strong>Stripe</strong> handles payment. Stripe stores your card details, billing address, and payment history. We receive only your Stripe customer ID and subscription status. See Stripe's privacy policy for what they collect.</p>
+
+    <h2>What we store on our server</h2>
+    <ul>
+      <li><strong>Daily quota counters</strong>, keyed by tier, user-or-device ID, and date. Used to enforce per-tier daily limits.</li>
+      <li><strong>Your subscription tier</strong>, keyed by your Clerk user ID.</li>
+      <li><strong>Stripe customer mapping</strong>, so that subscription lifecycle events from Stripe can be routed to the correct account.</li>
+    </ul>
+    <p>We do not store post text, email addresses, or names on our server. Email is held by Clerk; payment data is held by Stripe.</p>
+
+    <h2>What the extension stores in your browser</h2>
+    <ul>
+      <li><strong><code>device_id</code></strong> — a random UUID generated on first install. Reserved as the anonymous-tier identifier.</li>
+      <li><strong><code>signed_in</code></strong> — whether a valid Clerk session is active.</li>
+      <li><strong><code>enabled</code></strong> — your show-badges preference.</li>
+      <li><strong><code>last_quota</code></strong> — your most recent quota status, cached for the popup.</li>
+    </ul>
+    <p>These are kept in <code>chrome.storage</code> and are not transmitted anywhere except as part of the API calls described above.</p>
+
+    <h2>Permissions explained</h2>
+    <ul>
+      <li><strong>Host access to <code>linkedin.com</code> and <code>*.substack.com</code></strong> — required to read post text and inject score badges into those pages. The extension's content scripts only run on these domains.</li>
+      <li><strong>Host access to our Modal endpoint and Clerk's domains</strong> — required to call the inference API and authenticate.</li>
+      <li><strong><code>storage</code></strong> — required to remember the preferences listed above across sessions.</li>
+      <li><strong><code>activeTab</code></strong> — required to detect whether you're on a supported site and fetch live stats for the popup.</li>
+    </ul>
+
+    <h2>Self-hosted builds</h2>
+    <p>slopstop is open source. If you have built the extension from <a href="https://github.com/paulgailey/slopstop">the source repo</a> and configured it to point at your own inference endpoint, this policy does not apply to that build — your traffic goes to your own infrastructure, not ours. Clerk and Stripe are not used in the open-source build.</p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>We don't sell or share your data with advertisers.</li>
+      <li>We don't track your browsing outside LinkedIn and Substack.</li>
+      <li>We don't read posts you can't see — only the text already rendered in your DOM.</li>
+    </ul>
+
+    <h2>Changes</h2>
+    <p>We may update this policy as the extension evolves. Material changes will be reflected here and announced in the extension popup. Continued use after changes constitutes acceptance.</p>
+
+    <h2>Contact</h2>
+    <p>Questions or data requests: <a href="mailto:pgailey06@gmail.com">pgailey06@gmail.com</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <a class="brand small" href="index.html"><span class="brand-name">slopstop</span></a>
+        <nav class="footer-nav">
+          <a href="https://github.com/paulgailey/slopstop">GitHub</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
