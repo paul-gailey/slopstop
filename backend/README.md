@@ -48,7 +48,10 @@ If you keep that shape, anything goes — call OpenAI, call your own endpoint, r
 
 ## Hardening (optional)
 
-The default deploy is fully open. If you don't want randos hitting your endpoint, add one of:
+The build already rejects request bodies larger than 64 KB with a `413` — a
+cheap guard so a stray multi-MB upload can't tie up a container. Beyond that
+the default deploy is fully open. If you don't want randos hitting your
+endpoint, add one of:
 
 - **A shared secret**: require an `Authorization: Bearer <token>` header in `/detect`, set the token via `modal.Secret`, and have the extension send it. Out of scope for the OSS build — fork and add it.
 - **Origin lock**: restrict CORS to `chrome-extension://<your-extension-id>`. This only stops browser-based abusers; anyone with curl gets through.

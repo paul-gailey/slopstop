@@ -5,10 +5,11 @@ Open-source build:
   - /detect  POST {text} -> {score, band, low_confidence, version}
   - /health  GET
 
-No auth, no quotas, no billing. CORS is open so any browser extension build
-can call it. If you put this on the public internet, expect anyone with the
-URL to be able to consume your Modal credits — keep the URL private, or add
-your own auth.
+No auth, no quotas, no billing — just a 64 KB request-body cap so a stray
+multi-MB upload can't tie up a container. CORS is open so any browser
+extension build can call it. If you put this on the public internet, expect
+anyone with the URL to be able to consume your Modal credits — keep the URL
+private, or add your own auth.
 
 Deploy:
   pip install modal
@@ -28,7 +29,7 @@ Model:
 import modal
 
 MODEL_NAME = "desklib/ai-text-detector-v1.01"
-VERSION = "oss-v0.1"
+VERSION = "oss-v0.2"
 MAX_LEN = 768
 MIN_WORDS = 10
 LOW_CONFIDENCE_BELOW = 50
@@ -122,7 +123,8 @@ class Detector:
 @app.function(image=cpu_image, scaledown_window=300)
 @modal.asgi_app()
 def web():
-    from fastapi import FastAPI, HTTPException
+    from fastapi import FastAPI, HTTPException, Request
+    from fastapi.responses import JSONResponse
     from fastapi.middleware.cors import CORSMiddleware
 
     api = FastAPI()
@@ -133,6 +135,27 @@ def web():
         allow_headers=["Content-Type"],
         max_age=600,
     )
+
+    # MAX_CHARS (10_000) of UTF-8 text is at most ~40 KB; 64 KB is a generous
+    # cap that still rejects multi-MB bodies before FastAPI parses them. Only
+    # catches requests that send a Content-Length header (chunked uploads
+    # bypass this).
+    MAX_BODY_BYTES = 64 * 1024
+
+    @api.middleware("http")
+    async def limit_body_size(request: Request, call_next):
+        if request.method == "POST":
+            cl = request.headers.get("content-length")
+            if cl is not None:
+                try:
+                    if int(cl) > MAX_BODY_BYTES:
+                        return JSONResponse(
+                            {"error": "payload_too_large"},
+                            status_code=413,
+                        )
+                except ValueError:
+                    pass
+        return await call_next(request)
 
     @api.post("/detect")
     def detect(payload: dict):

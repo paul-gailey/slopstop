@@ -9,7 +9,7 @@ Two signals stacked together:
 - **Heuristic badge** — pattern matching that runs entirely in the browser. Em-dash density, stock phrases, emoji-bullet structure. Free, instant, no network.
 - **AI-detector model** — on-demand classifier behind a `/detect` endpoint. You bring your own backend (one `modal deploy` away).
 
-A hosted, paid version of slopstop lives at <https://paulgailey.github.io/slopstop>. This repo is the open-source build: same extension, no auth, no quotas, point it at your own endpoint.
+A hosted, paid version of slopstop lives at <https://paul-gailey.github.io/slopstop>. This repo is the open-source build: same extension, no auth, no quotas, point it at your own endpoint.
 
 ## Layout
 
