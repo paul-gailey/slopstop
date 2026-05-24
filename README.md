@@ -2,6 +2,8 @@
 
 A Chrome extension that flags likely AI-generated posts and comments on LinkedIn and Substack.
 
+**[Install from the Chrome Web Store →](https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk)**
+
 Two signals stacked together:
 
 - **Heuristic badge** — pattern matching that runs entirely in the browser. Em-dash density, stock phrases, emoji-bullet structure. Free, instant, no network.
