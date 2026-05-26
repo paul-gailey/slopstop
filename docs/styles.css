@@ -185,6 +185,44 @@ h1 {
   font-size: 13px;
 }
 
+.cta-band {
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  text-align: center;
+  padding: 60px 0;
+}
+.cta-band h2 { color: white; margin: 0 0 10px; }
+.cta-band p { color: rgba(255,255,255,0.92); margin: 0 0 24px; font-size: 16px; }
+.btn-on-accent {
+  background: white;
+  color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+.btn-on-accent:hover { box-shadow: 0 8px 26px rgba(0,0,0,0.26); }
+.cta-band .microcopy { color: rgba(255,255,255,0.85); }
+
+.microcopy { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+
+.faq { max-width: 680px; margin: 0 auto; }
+.faq details {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 2px;
+}
+.faq details:last-child { border-bottom: none; }
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--text-muted); font-weight: 400; font-size: 22px; line-height: 1; }
+.faq details[open] summary::after { content: "\2013"; }
+.faq details p { color: var(--text-muted); font-size: 14px; line-height: 1.65; margin: 12px 0 0; }
+
 .site-footer {
   padding: 32px 0;
   border-top: 1px solid var(--border);
