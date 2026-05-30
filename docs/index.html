@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>slopstop — see what's AI on LinkedIn, Substack &amp; X</title>
-  <meta name="description" content="A Chrome extension that scores LinkedIn, Substack, and X (Twitter) posts for AI-generated content, in real time as you scroll. Free to install.">
+  <title>slopstop</title>
+  <meta name="description"
+    content="A Chrome extension that scores LinkedIn, Substack, and X (Twitter) posts for AI-generated content, in real time as you scroll. Free to install.">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header class="site-header">
     <a class="brand" href="/">
       <svg class="brand-mark" width="36" height="36" viewBox="0 0 32 32">
         <defs>
           <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#0ea5e9"/>
-            <stop offset="100%" stop-color="#6366f1"/>
+            <stop offset="0%" stop-color="#0ea5e9" />
+            <stop offset="100%" stop-color="#6366f1" />
           </linearGradient>
         </defs>
-        <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#g)"/>
-        <text x="16" y="21" text-anchor="middle" fill="white" font-size="12" font-weight="800" font-family="-apple-system, system-ui, sans-serif">AI</text>
+        <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#g)" />
+        <text x="16" y="21" text-anchor="middle" fill="white" font-size="12" font-weight="800"
+          font-family="-apple-system, system-ui, sans-serif">AI</text>
       </svg>
       <span class="brand-name">slopstop</span>
     </a>
@@ -26,22 +30,31 @@
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
-      <a href="https://github.com/paul-gailey/slopstop" class="nav-github" target="_blank" rel="noopener" aria-label="View on GitHub">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      <a href="https://github.com/paul-gailey/slopstop" class="nav-github" target="_blank" rel="noopener"
+        aria-label="View on GitHub">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+        </svg>
       </a>
-      <a href="https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk" class="nav-cta" target="_blank" rel="noopener">Add to Chrome</a>
+      <a href="https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk" class="nav-cta"
+        target="_blank" rel="noopener">Add to Chrome</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="container">
       <h1>See which posts are <span class="grad">AI-generated</span><br>before you read them.</h1>
-      <p class="lede">Your LinkedIn, Substack, and X feeds are filling up with AI slop. slopstop scores every post and comment for AI tells, live as you scroll — so you know what's worth your time.</p>
+      <p class="lede">Your LinkedIn, Substack, and X feeds are filling up with AI slop. slopstop scores every post and
+        comment for AI tells, live as you scroll — so you know what's worth your time.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk" target="_blank" rel="noopener">Add to Chrome — free</a>
+        <a class="btn btn-primary"
+          href="https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk" target="_blank"
+          rel="noopener">Add to Chrome — free</a>
         <a class="btn btn-secondary" href="#how">See how it works</a>
       </div>
-      <div class="hero-meta">Free · No account needed to start · Installs in seconds · Works on LinkedIn, Substack, and X</div>
+      <div class="hero-meta">Free · No account needed to start · Installs in seconds · Works on LinkedIn, Substack, and
+        X</div>
     </div>
   </section>
 
@@ -52,22 +65,26 @@
         <div class="feature">
           <div class="feature-icon" style="background: #16a34a"></div>
           <h3>Real-time scoring</h3>
-          <p>Each post and comment gets a colored badge showing how likely it is to be AI-generated, on a 0–100 scale — before you waste a minute reading it.</p>
+          <p>Each post and comment gets a colored badge showing how likely it is to be AI-generated, on a 0–100 scale —
+            before you waste a minute reading it.</p>
         </div>
         <div class="feature">
           <div class="feature-icon" style="background: #ca8a04"></div>
           <h3>Reasoning, not just verdicts</h3>
-          <p>Hover any badge to see exactly which patterns triggered the score: stock phrases, em-dashes, emoji-bullet structure.</p>
+          <p>Hover any badge to see exactly which patterns triggered the score: stock phrases, em-dashes, emoji-bullet
+            structure.</p>
         </div>
         <div class="feature">
           <div class="feature-icon" style="background: #dc2626"></div>
           <h3>Private by default</h3>
-          <p>The heuristic badge runs entirely in your browser — no post text leaves your machine. The optional AI detector only sends text when you ask it to.</p>
+          <p>The heuristic badge runs entirely in your browser — no post text leaves your machine. The optional AI
+            detector only sends text when you ask it to.</p>
         </div>
         <div class="feature">
           <div class="feature-icon" style="background: #6366f1"></div>
           <h3>Optional AI detector</h3>
-          <p>Want a second opinion? Click <strong>Run AI detector</strong> on any post to score it with an ML model. Free for 5 checks a day when signed in; paid tiers raise the daily limit.</p>
+          <p>Want a second opinion? Click <strong>Run AI detector</strong> on any post to score it with an ML model.
+            Free for 5 checks a day when signed in; paid tiers raise the daily limit.</p>
         </div>
       </div>
     </div>
@@ -77,11 +94,24 @@
     <div class="container">
       <h2>How it works</h2>
       <ol class="steps">
-        <li><span class="step-num">1</span><div><strong>Add to Chrome</strong> and open LinkedIn, Substack, or X. No account needed.</div></li>
-        <li><span class="step-num">2</span><div><strong>Scroll your feed.</strong> Every post and comment gets a small score badge in the corner.</div></li>
-        <li><span class="step-num">3</span><div><strong>Hover</strong> any badge to see why it scored that way — em-dash density, stock phrases, structural tells.</div></li>
-        <li><span class="step-num">4</span><div><strong>Want more certainty?</strong> Click <strong>Run AI detector</strong> in the tooltip to score the post with an ML model — 5 free checks a day when signed in, more on paid tiers.</div></li>
-        <li><span class="step-num">5</span><div><strong>Treat it as a hint.</strong> Heuristics aren't proof. Polished writers will trip false positives.</div></li>
+        <li><span class="step-num">1</span>
+          <div><strong>Add to Chrome</strong> and open LinkedIn, Substack, or X. No account needed.</div>
+        </li>
+        <li><span class="step-num">2</span>
+          <div><strong>Scroll your feed.</strong> Every post and comment gets a small score badge in the corner.</div>
+        </li>
+        <li><span class="step-num">3</span>
+          <div><strong>Hover</strong> any badge to see why it scored that way — em-dash density, stock phrases,
+            structural tells.</div>
+        </li>
+        <li><span class="step-num">4</span>
+          <div><strong>Want more certainty?</strong> Click <strong>Run AI detector</strong> in the tooltip to score the
+            post with an ML model — 5 free checks a day when signed in, more on paid tiers.</div>
+        </li>
+        <li><span class="step-num">5</span>
+          <div><strong>Treat it as a hint.</strong> Heuristics aren't proof. Polished writers will trip false positives.
+          </div>
+        </li>
       </ol>
     </div>
   </section>
@@ -90,7 +120,9 @@
     <div class="container narrow">
       <h2>Stop reading AI slop.</h2>
       <p>Install slopstop and start seeing AI scores on your very next scroll.</p>
-      <a class="btn btn-on-accent" href="https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk" target="_blank" rel="noopener">Add to Chrome — free</a>
+      <a class="btn btn-on-accent"
+        href="https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk" target="_blank"
+        rel="noopener">Add to Chrome — free</a>
       <div class="microcopy">Free forever for the heuristic badge · No account required</div>
     </div>
   </section>
@@ -101,11 +133,15 @@
       <div class="faq">
         <details open>
           <summary>Is it free?</summary>
-          <p>Yes. The heuristic score badge runs on every post with no account and no cost. Sign in and you also get 5 ML-detector checks a day for free. Paid tiers only raise that daily limit — they don't unlock the core experience.</p>
+          <p>Yes. The heuristic score badge runs on every post with no account and no cost. Sign in and you also get 5
+            ML-detector checks a day for free. Paid tiers only raise that daily limit — they don't unlock the core
+            experience.</p>
         </details>
         <details>
           <summary>Does my data leave my browser?</summary>
-          <p>The heuristic badge runs entirely on your device — no post text is ever sent anywhere. The ML detector only sends a post's text when you click <strong>Run AI detector</strong> (or automatically on the Pro tier). Text is used for scoring and not stored. See our <a href="privacy.html">privacy policy</a>.</p>
+          <p>The heuristic badge runs entirely on your device — no post text is ever sent anywhere. The ML detector only
+            sends a post's text when you click <strong>Run AI detector</strong> (or automatically on the Pro tier). Text
+            is used for scoring and not stored. See our <a href="privacy.html">privacy policy</a>.</p>
         </details>
         <details>
           <summary>Which sites does it work on?</summary>
@@ -113,11 +149,15 @@
         </details>
         <details>
           <summary>How accurate is it?</summary>
-          <p>It's a hint, not a verdict. Heuristics flag patterns common in AI writing, so polished human writers will sometimes score high. That's why every score links to its reasons, and why you can run the ML detector for a stronger second opinion. Don't use it to make accusations.</p>
+          <p>It's a hint, not a verdict. Heuristics flag patterns common in AI writing, so polished human writers will
+            sometimes score high. That's why every score links to its reasons, and why you can run the ML detector for a
+            stronger second opinion. Don't use it to make accusations.</p>
         </details>
         <details>
           <summary>Do I have to pay for anything?</summary>
-          <p>No. Everything most people need is free. Paid tiers (from £3/month) simply raise the daily ML-detector limit, and the Pro tier runs the detector automatically on every post. You can install and use slopstop indefinitely without paying.</p>
+          <p>No. Everything most people need is free. Paid tiers (from £3/month) simply raise the daily ML-detector
+            limit, and the Pro tier runs the detector automatically on every post. You can install and use slopstop
+            indefinitely without paying.</p>
         </details>
       </div>
     </div>
@@ -128,7 +168,9 @@
       <h2>Add slopstop to Chrome</h2>
       <p>Free to install, no account required. Start spotting AI posts in seconds.</p>
       <div class="cta-row" style="margin: 28px 0 8px;">
-        <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk" target="_blank" rel="noopener">Add to Chrome — free</a>
+        <a class="btn btn-primary"
+          href="https://chromewebstore.google.com/detail/slopstop/jioimkcoklaagibjbljcddkibhpmppkk" target="_blank"
+          rel="noopener">Add to Chrome — free</a>
       </div>
       <p style="margin-top: 24px; font-size: 14px; color: var(--text-muted);">
         Want to self-host with your own AI-detector model? slopstop is open source —
@@ -141,7 +183,16 @@
     <div class="container">
       <div class="footer-cols">
         <a class="brand small" href="index.html">
-          <svg width="22" height="22" viewBox="0 0 32 32"><defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#6366f1"/></linearGradient></defs><rect x="2" y="2" width="28" height="28" rx="8" fill="url(#g2)"/><text x="16" y="21" text-anchor="middle" fill="white" font-size="12" font-weight="800" font-family="-apple-system, system-ui, sans-serif">AI</text></svg>
+          <svg width="22" height="22" viewBox="0 0 32 32">
+            <defs>
+              <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0ea5e9" />
+                <stop offset="100%" stop-color="#6366f1" />
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="28" height="28" rx="8" fill="url(#g2)" /><text x="16" y="21" text-anchor="middle"
+              fill="white" font-size="12" font-weight="800" font-family="-apple-system, system-ui, sans-serif">AI</text>
+          </svg>
           <span class="brand-name">slopstop</span>
         </a>
         <nav class="footer-nav">
@@ -153,4 +204,5 @@
     </div>
   </footer>
 </body>
+
 </html>
