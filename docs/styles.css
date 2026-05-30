@@ -75,6 +75,12 @@ a:hover { text-decoration: underline; }
   font-weight: 600;
 }
 .site-nav a.nav-cta:hover { opacity: 0.9; }
+.nav-github {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+.nav-github:hover { color: var(--text); }
 
 .hero {
   padding: 90px 0 70px;
